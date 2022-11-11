@@ -71,16 +71,13 @@ public class PersonService {
             .collect(Collectors.toList());
 
     static List<Person> sortPersonByLastName = personList.stream()
-            .sorted(Comparator.comparing(person -> person.lastName()))
+            .sorted(Comparator.comparing(Person::lastName))
             .collect(Collectors.toList());
 
 
     static List<Person> sortByFirstLastNameAndAge = personList.stream()
             .sorted(Comparator.comparing(Person::firstName).thenComparing(Person::lastName).thenComparingInt(Person::age))
             .collect(Collectors.toList());
-
-            //s.sorted(Comparator.comparing(Person::getName).thenComparingInt(Person::getAge))
-
 
 }
 
