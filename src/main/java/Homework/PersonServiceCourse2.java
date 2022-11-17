@@ -24,7 +24,8 @@ public class PersonServiceCourse2 {
     public List<String> getFullName() {
 
         return people.stream()
-                .map(person -> person.firstName() + "  " + person.lastName())
+                //.map(person -> person.firstName() + "  " + person.lastName())
+                .map(person -> "%s %s".formatted(person.firstName(),person.lastName()))
                 .toList();
 
     }

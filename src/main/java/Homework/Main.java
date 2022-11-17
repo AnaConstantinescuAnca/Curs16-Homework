@@ -12,9 +12,8 @@ public class Main {
         System.out.println("Afisez numele tuturor persoanelor (firstName lastname):");
         System.out.println(PersonService.allPersons);
 
+     System.out.println("Afisez firstName si lastName din clasa in care am definit Lista people ca fiind privata si finala:");
        PersonServiceCourse2 personServiceCourse2 = new PersonServiceCourse2();
-
-
         System.out.println(personServiceCourse2.getFullName());
         System.out.println(personServiceCourse2.getPersonWithAgeBetween(18,60));
 
