@@ -2,6 +2,7 @@ package Homework;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -18,9 +19,12 @@ public class PersonService {
 
     Stream<Person> stream = personList.stream();
 
-    static List<String> allPersons = personList.stream()
+      static List<String> allPersons = personList.stream()
             .map(person -> person.firstName() + " " + person.lastName())
-            .toList();
+              //.map(person -> "s% s%".formatted(person.firstName(), person.lastName()))
+
+              .toList();
+
 
 
     static List<Person> allMajor = personList.stream()
@@ -37,14 +41,10 @@ public class PersonService {
 
 
     static List<String> firstNamesCapitalized = personList.stream()
-            .map(Person::firstName)
+            .map(person -> person.firstName().toUpperCase())
+            //.map(Person::firstName)
             .toList();
-    static String printFirstNamesCapitalized(Function<String, String> howToPrint) {
-        return howToPrint.apply(firstNamesCapitalized.toString());
-        //System.out.println(howToPrint.apply(firstNamesCapitalized.toString().toUpperCase()));
-        //printSomething(s -> s.toUpperCase());
-        //return false;
-    }
+
 
     static List<String> firstNameFirstLetterOfLastName = personList.stream()
             .map(person -> person.firstName() + " " + person.lastName().substring(0,1) + ".")

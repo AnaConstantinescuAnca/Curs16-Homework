@@ -1,11 +1,22 @@
 package Homework;
 
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
+
     public static void main(String[] args) {
 
         //  - list all the persons names: firstName lastName
         System.out.println("Afisez numele tuturor persoanelor (firstName lastname):");
         System.out.println(PersonService.allPersons);
+
+       PersonServiceCourse2 personServiceCourse2 = new PersonServiceCourse2();
+
+
+        System.out.println(personServiceCourse2.getFullName());
+        System.out.println(personServiceCourse2.getPersonWithAgeBetween(18,60));
 
         //- list all persons that are major
         System.out.println("Afisez toate persoanele majore:");
@@ -21,7 +32,8 @@ public class Main {
 
         //- list all firstNames CAPITALIZED
         System.out.println("Afisez toate prenumele cu majuscule:");
-        System.out.println(PersonService.printFirstNamesCapitalized(s -> s.toUpperCase()));
+        System.out.println(PersonService.firstNamesCapitalized);
+        //System.out.println(PersonService.printFirstNamesCapitalized(s -> s.toUpperCase()));
 
         //- list all person names: firstName firstletter from last name: Stefan B.
         System.out.println("Afisez toate numele persoanelor: prenume si prima litera din nume. :");
